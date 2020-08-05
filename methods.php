@@ -95,7 +95,7 @@ function addReview($connect, $data){
 
     if (                                    // валидация
         strlen($name) > 50 ||               // имя (никнейм) не больше 50 символов
-        ($rating <= 1 && $rating >= 5) ||   // рейтинг от 1 до 5
+        ($rating < 1 && $rating > 5) ||   // рейтинг от 1 до 5
         strlen($description) > 1000 ||      // описание не больше 1000 символов
         count($photo) > 3                   // ссылки на фото не больше 3-х
     ){
